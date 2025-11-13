@@ -25,7 +25,6 @@ COLORS = [Fore.RED, Fore.GREEN, Fore.YELLOW, Fore.CYAN, Fore.MAGENTA, Fore.WHITE
 
 
 def clear():
-    """Smooth screen refresh: move cursor to top instead of clearing."""
     sys.stdout.write("\033[H")
     sys.stdout.flush()
 
@@ -38,7 +37,6 @@ def get_terminal_width():
 
 
 def print_tree_with_lyrics(frame, lyrics_lines):
-    """Draw the color-changing tree with heading and lyrics."""
     terminal_width = get_terminal_width()
     max_tree_width = len(TREE[-1])
     gap = 10
@@ -106,7 +104,6 @@ def type_lyrics(lyrics, shared):
 def main():
     lyrics_path = "lyrics.txt"
     if not os.path.exists(lyrics_path):
-        print("Please create a 'lyrics.txt' file with your lyrics.")
         return
 
     with open(lyrics_path, "r", encoding="utf-8") as f:
@@ -133,3 +130,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
